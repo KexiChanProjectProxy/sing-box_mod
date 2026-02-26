@@ -84,6 +84,7 @@ func NewRealityServer(ctx context.Context, logger log.ContextLogger, options opt
 			logger.Trace(fmt.Sprintf(format, v...))
 		}
 	}
+	tlsConfig.Xver = options.Reality.Xver
 	tlsConfig.Type = N.NetworkTCP
 	tlsConfig.Dest = options.Reality.Handshake.ServerOptions.Build().String()
 
